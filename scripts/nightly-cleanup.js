@@ -41,18 +41,24 @@ function extractTasks(htmlContent) {
         active: []
     };
     
-    // Simple regex to find task items - this would need to be adjusted based on actual HTML structure
-    const taskPattern = /<li[^>]*class="[^"]*task[^"]*"[^>]*>(.*?)<\/li>/gs;
+    // Extract task divs from the dashboard structure
+    const taskPattern = /<div class="flex items-center gap-3 p-3[^>]*">[\s\S]*?<\/div>/g;
     const matches = htmlContent.matchAll(taskPattern);
     
     for (const match of matches) {
-        const taskHtml = match[1];
-        const isCompleted = taskHtml.includes('completed') || taskHtml.includes('done') || taskHtml.includes('✓');
+        const taskHtml = match[0];
+        
+        // Check if task is completed based on various indicators
+        const isCompleted = taskHtml.includes('completed') || 
+                          taskHtml.includes('Done') || 
+                          taskHtml.includes('✓') || 
+                          taskHtml.includes('line-through') || 
+                          taskHtml.includes('opacity-60');
         
         if (isCompleted) {
-            tasks.completed.push(match[0]);
+            tasks.completed.push(taskHtml);
         } else {
-            tasks.active.push(match[0]);
+            tasks.active.push(taskHtml);
         }
     }
     
@@ -93,10 +99,19 @@ function archiveCompletedTasks(completedTasks) {
 }
 
 function updateDashboard(originalContent, activeTasks) {
-    // This is a simplified update - would need to be customized based on actual dashboard structure
+    // Rebuild the task section with only active tasks
+    const taskSectionStart = '                    <div class="space-y-3">';
+    const taskSectionEnd = '                    </div>';
+    
+    const activeTasksHtml = activeTasks.map(task => 
+        '                        ' + task
+    ).join('\n\n');
+    
+    const newTasksSection = `<!-- TASKS_START -->\n${taskSectionStart}\n${activeTasksHtml}\n${taskSectionEnd}\n                    <!-- TASKS_END -->`;
+    
     const updatedContent = originalContent.replace(
         /<!-- TASKS_START -->.*?<!-- TASKS_END -->/s,
-        `<!-- TASKS_START -->\n${activeTasks.join('\n')}\n<!-- TASKS_END -->`
+        newTasksSection
     );
     
     // Add timestamp of last cleanup
@@ -106,7 +121,14 @@ function updateDashboard(originalContent, activeTasks) {
         `<!-- LAST_CLEANUP -->Last cleanup: ${timestamp}<!-- /LAST_CLEANUP -->`
     );
     
-    fs.writeFileSync(DASHBOARD_FILE, finalContent);
+    // Update task count
+    const taskCountText = `${activeTasks.length} active task${activeTasks.length !== 1 ? 's' : ''}`;
+    const finalContentWithCount = finalContent.replace(
+        /\d+ active tasks?/,
+        taskCountText
+    );
+    
+    fs.writeFileSync(DASHBOARD_FILE, finalContentWithCount);
     log('Updated dashboard with active tasks only');
 }
 
