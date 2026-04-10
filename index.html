@@ -55,20 +55,20 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                         <div>
                             <p class="text-sm text-gray-500 font-medium">Weekly Revenue</p>
-                            <p class="text-3xl font-extrabold text-[#1e3a5f]">$0.00</p>
-                            <p class="text-xs text-gray-400">0.0% of $10K target</p>
+                            <p class="text-3xl font-extrabold text-[#1e3a5f]" id="weekRevenue">...</p>
+                            <p class="text-xs text-gray-400" id="weekPct">loading...</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 font-medium">Month</p>
-                            <p class="text-3xl font-extrabold text-[#1e3a5f]">$0.00</p>
+                            <p class="text-3xl font-extrabold text-[#1e3a5f]" id="monthRevenue">...</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 font-medium">Txns (Week)</p>
-                            <p class="text-3xl font-extrabold text-[#1e3a5f]">0</p>
+                            <p class="text-3xl font-extrabold text-[#1e3a5f]" id="weekTxns">...</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 font-medium">Txns (Month)</p>
-                            <p class="text-3xl font-extrabold text-[#1e3a5f]">0</p>
+                            <p class="text-3xl font-extrabold text-[#1e3a5f]" id="monthTxns">...</p>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                             <p class="text-xs text-gray-500 mb-3">Chief of Staff - Orchestrates team, manages complex projects, strategic thinking</p>
                             <div class="bg-white/80 rounded-lg px-3 py-2 mb-3">
                                 <p class="text-xs text-gray-400">Current Task</p>
-                                <p class="text-sm font-medium text-[#1e3a5f]">Dashboard deployment, Website branding fixes</p>
+                                <p class="text-sm font-medium text-[#1e3a5f]">Dashboard repair, LinkedIn content, live trading Day 1 monitoring</p>
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400">
                                 <span>47 tasks completed</span>
@@ -128,7 +128,7 @@
                             <p class="text-xs text-gray-500 mb-3">Content & Distribution - Social media, newsletters, content strategy</p>
                             <div class="bg-white/80 rounded-lg px-3 py-2 mb-3">
                                 <p class="text-xs text-gray-400">Current Task</p>
-                                <p class="text-sm font-medium text-[#1e3a5f]">Social Media Blitz: LinkedIn intro, FB milestone (50 followers!)</p>
+                                <p class="text-sm font-medium text-[#1e3a5f]">LinkedIn post drafts ready for Jeff, social media setup via Zernio</p>
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400">
                                 <span>23 tasks completed</span>
@@ -150,7 +150,7 @@
                             <p class="text-xs text-gray-500 mb-3">Sales & Outreach - Lead generation, cold outreach, pipeline management</p>
                             <div class="bg-white/80 rounded-lg px-3 py-2 mb-3">
                                 <p class="text-xs text-gray-400">Current Task</p>
-                                <p class="text-sm font-medium text-[#1e3a5f]">HCIP Acquisition Calls: Qualgen LLC, Apollo Care</p>
+                                <p class="text-sm font-medium text-[#1e3a5f]">503B pharmacy acquisition outreach, LinkedIn lead gen</p>
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400">
                                 <span>19 tasks completed</span>
@@ -172,7 +172,7 @@
                             <p class="text-xs text-gray-500 mb-3">Research & Opportunity Scout - Market analysis, competitive intel, grant research</p>
                             <div class="bg-white/80 rounded-lg px-3 py-2 mb-3">
                                 <p class="text-xs text-gray-400">Current Task</p>
-                                <p class="text-sm font-medium text-[#1e3a5f]">Grant Platform Research, Agent Leasing Analysis</p>
+                                <p class="text-sm font-medium text-[#1e3a5f]">Grant Scout API expansion (9 sources live), trading research</p>
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400">
                                 <span>31 tasks completed</span>
@@ -194,7 +194,7 @@
                             <p class="text-xs text-gray-500 mb-3">Acquisitions & Finance - Trading, financial analysis, acquisition research</p>
                             <div class="bg-white/80 rounded-lg px-3 py-2 mb-3">
                                 <p class="text-xs text-gray-400">Current Task</p>
-                                <p class="text-sm font-medium text-[#1e3a5f]">Paper Trading Day 1: $100K virtual portfolio monitoring</p>
+                                <p class="text-sm font-medium text-[#1e3a5f]">Live trading Day 1 - Alpaca account $300, monitoring first positions</p>
                             </div>
                             <div class="flex items-center justify-between text-xs text-gray-400">
                                 <span>12 tasks completed</span>
@@ -210,31 +210,38 @@
                     <div class="space-y-3">
                         <div class="bg-white rounded-xl border border-gray-200 p-4 flex items-center justify-between">
                             <div>
-                                <h4 class="font-medium text-[#1e3a5f]">SAM.gov Verification</h4>
-                                <p class="text-sm text-gray-600">Monitor for approval notification - documentation submitted</p>
+                                <h4 class="font-medium text-[#1e3a5f]">Zernio Setup</h4>
+                                <p class="text-sm text-gray-600">Set up Zernio for social media management so Artemis can manage social posts — Jeff said he'd do this Apr 10</p>
                             </div>
-                            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">High Priority</span>
+                            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Today</span>
                         </div>
                         <div class="bg-white rounded-xl border border-gray-200 p-4 flex items-center justify-between">
                             <div>
-                                <h4 class="font-medium text-[#1e3a5f]">Grants.gov Registration</h4>
-                                <p class="text-sm text-gray-600">Complete organizational registration for application API access</p>
+                                <h4 class="font-medium text-[#1e3a5f]">LinkedIn Post</h4>
+                                <p class="text-sm text-gray-600">LinkedIn posts review + post (Dennis drafts ready) — Jeff confirmed he'd post Friday Apr 10</p>
                             </div>
-                            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">High Priority</span>
+                            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">Today</span>
                         </div>
                         <div class="bg-white rounded-xl border border-gray-200 p-4 flex items-center justify-between">
                             <div>
-                                <h4 class="font-medium text-[#1e3a5f]">Data Coverage Review</h4>
-                                <p class="text-sm text-gray-600">Approve state/source priorities for ninja platform expansion</p>
+                                <h4 class="font-medium text-[#1e3a5f]">Simpler Grants API Key</h4>
+                                <p class="text-sm text-gray-600">Register at simpler.grants.gov/developer (free, 10 min) → set SIMPLER_GRANTS_API_KEY in Vercel for Grant Scout</p>
                             </div>
-                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Medium</span>
+                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">High Priority</span>
                         </div>
                         <div class="bg-white rounded-xl border border-gray-200 p-4 flex items-center justify-between">
                             <div>
-                                <h4 class="font-medium text-[#1e3a5f]">8.5% Success Fee Confirmation</h4>
-                                <p class="text-sm text-gray-600">Confirm pricing strategy across all funding sources</p>
+                                <h4 class="font-medium text-[#1e3a5f]">SAM.gov Real API Key</h4>
+                                <p class="text-sm text-gray-600">Get real SAM.gov API key at sam.gov (replace DEMO_KEY in grant-scout) → set SAM_API_KEY in Vercel</p>
                             </div>
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Low</span>
+                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">High Priority</span>
+                        </div>
+                        <div class="bg-white rounded-xl border border-gray-200 p-4 flex items-center justify-between">
+                            <div>
+                                <h4 class="font-medium text-[#1e3a5f]">augeoagency.com DNS Fix</h4>
+                                <p class="text-sm text-gray-600">Point augeoagency.com DNS to Vercel (GoDaddy nameservers or A record) — 5+ days waiting</p>
+                            </div>
+                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">High Priority</span>
                         </div>
                     </div>
                 </div>
@@ -310,22 +317,41 @@
                         </div>
                     </div>
 
-                    <!-- Agent Leasing -->
+                    <!-- TheGrant.Ninja -->
                     <div class="bg-white rounded-xl border border-gray-200 p-6">
                         <div class="flex justify-between items-start mb-3">
                             <div>
-                                <span class="text-xs font-bold uppercase tracking-wider text-purple-600">FUTURE</span>
-                                <h3 class="text-lg font-bold text-[#1e3a5f] mt-1">Agent Leasing</h3>
+                                <span class="text-xs font-bold uppercase tracking-wider text-orange-600">ARTEMIS</span>
+                                <h3 class="text-lg font-bold text-[#1e3a5f] mt-1">TheGrant.Ninja</h3>
                             </div>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700">Research</span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-green-100 text-green-700">Active</span>
                         </div>
-                        <p class="text-sm text-gray-500 mb-4">AI temp agency model - lease specialized agents for projects</p>
+                        <p class="text-sm text-gray-500 mb-4">Federal, state & private grant search engine. 9 live APIs. Free + $97/mo pro.</p>
                         <div class="flex items-center justify-between border-t border-gray-100 pt-3">
                             <div>
-                                <p class="text-xs text-gray-400">Market Size</p>
-                                <p class="text-xl font-bold text-[#1e3a5f]">TBD</p>
+                                <p class="text-xs text-gray-400">APIs Connected</p>
+                                <p class="text-xl font-bold text-[#1e3a5f]">9</p>
                             </div>
-                            <span class="text-lg text-gray-400">—</span>
+                            <a href="https://thegrant.ninja" target="_blank" class="text-xs text-blue-600 hover:text-blue-700 hover:underline">thegrant.ninja ↗</a>
+                        </div>
+                    </div>
+
+                    <!-- TheRFP.Ninja -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-orange-600">ARTEMIS</span>
+                                <h3 class="text-lg font-bold text-[#1e3a5f] mt-1">TheRFP.Ninja</h3>
+                            </div>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-green-100 text-green-700">Active</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4">Government RFP and contract opportunity finder. SAM.gov, USASpending, Federal Register.</p>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-3">
+                            <div>
+                                <p class="text-xs text-gray-400">APIs Connected</p>
+                                <p class="text-xl font-bold text-[#1e3a5f]">3</p>
+                            </div>
+                            <a href="https://therfp.ninja" target="_blank" class="text-xs text-blue-600 hover:text-blue-700 hover:underline">therfp.ninja ↗</a>
                         </div>
                     </div>
                 </div>
@@ -336,16 +362,16 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div>
                             <p class="text-sm text-gray-500">X Followers</p>
-                            <p class="text-2xl font-bold text-[#1e3a5f]">--</p>
+                            <p class="text-2xl font-bold text-[#1e3a5f]" id="xFollowers">...</p>
                             <p class="text-xs text-blue-600">@Artemis_jeff</p>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500">Recent Posts</p>
-                            <p class="text-2xl font-bold text-[#1e3a5f]">--</p>
+                            <p class="text-sm text-gray-500">Total Tweets</p>
+                            <p class="text-2xl font-bold text-[#1e3a5f]" id="xTweets">...</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500">Likes</p>
-                            <p class="text-2xl font-bold text-[#1e3a5f]">--</p>
+                            <p class="text-2xl font-bold text-[#1e3a5f]" id="xLikes">...</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500">FB Followers</p>
@@ -363,21 +389,68 @@
                     </div>
                     
                     <!-- TASKS_START -->
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                            <div class="w-3 h-3 rounded-full bg-blue-500"></div>
-
-                        <div class="flex items-center gap-3 p-3 bg-orange-50 rounded-lg border border-orange-200">
-                            <div class="w-3 h-3 rounded-full bg-orange-500"></div>
-
-                        <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg border border-green-200">
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="space-y-3" id="activeTaskList">
+                        <div class="task-card flex items-start justify-between gap-3 p-4 bg-orange-50 rounded-lg border border-orange-200" data-task-id="zernio_setup">
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 rounded-full bg-orange-500 mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-medium text-[#1e3a5f] text-sm">Zernio Setup</p>
+                                    <p class="text-xs text-gray-600 mt-0.5">Set up Zernio for social media management — Jeff said he'd do this Apr 10</p>
+                                    <span class="inline-block mt-1 text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">Today</span>
+                                </div>
+                            </div>
+                            <button onclick="markDone('zernio_setup', 'Zernio Setup', 'Set up Zernio for social media management — Jeff said he\'d do this Apr 10')" class="flex-shrink-0 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">DONE</button>
+                        </div>
+                        <div class="task-card flex items-start justify-between gap-3 p-4 bg-orange-50 rounded-lg border border-orange-200" data-task-id="linkedin_posts">
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 rounded-full bg-orange-500 mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-medium text-[#1e3a5f] text-sm">LinkedIn Post</p>
+                                    <p class="text-xs text-gray-600 mt-0.5">Dennis drafts ready — Jeff confirmed posting Friday Apr 10</p>
+                                    <span class="inline-block mt-1 text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">Today</span>
+                                </div>
+                            </div>
+                            <button onclick="markDone('linkedin_posts', 'LinkedIn Post', 'Dennis drafts ready — Jeff confirmed posting Friday Apr 10')" class="flex-shrink-0 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">DONE</button>
+                        </div>
+                        <div class="task-card flex items-start justify-between gap-3 p-4 bg-blue-50 rounded-lg border border-blue-200" data-task-id="simpler_grants_api_key">
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 rounded-full bg-blue-500 mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-medium text-[#1e3a5f] text-sm">Simpler Grants API Key</p>
+                                    <p class="text-xs text-gray-600 mt-0.5">Register at simpler.grants.gov/developer (free, 10 min) → set env var in Vercel</p>
+                                    <span class="inline-block mt-1 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">High Priority</span>
+                                </div>
+                            </div>
+                            <button onclick="markDone('simpler_grants_api_key', 'Simpler Grants API Key', 'Register at simpler.grants.gov/developer → set SIMPLER_GRANTS_API_KEY in Vercel')" class="flex-shrink-0 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">DONE</button>
+                        </div>
+                        <div class="task-card flex items-start justify-between gap-3 p-4 bg-blue-50 rounded-lg border border-blue-200" data-task-id="sam_gov_real_api_key">
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 rounded-full bg-blue-500 mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-medium text-[#1e3a5f] text-sm">SAM.gov Real API Key</p>
+                                    <p class="text-xs text-gray-600 mt-0.5">Get real key at sam.gov — replace DEMO_KEY, set SAM_API_KEY in Vercel</p>
+                                    <span class="inline-block mt-1 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">High Priority</span>
+                                </div>
+                            </div>
+                            <button onclick="markDone('sam_gov_real_api_key', 'SAM.gov Real API Key', 'Get real key at sam.gov — replace DEMO_KEY, set SAM_API_KEY in Vercel')" class="flex-shrink-0 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">DONE</button>
+                        </div>
+                        <div class="task-card flex items-start justify-between gap-3 p-4 bg-blue-50 rounded-lg border border-blue-200" data-task-id="augeoagency_dns">
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 rounded-full bg-blue-500 mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-medium text-[#1e3a5f] text-sm">augeoagency.com DNS Fix</p>
+                                    <p class="text-xs text-gray-600 mt-0.5">Point DNS to Vercel via GoDaddy (nameservers or A record) — 5+ days waiting</p>
+                                    <span class="inline-block mt-1 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">High Priority</span>
+                                </div>
+                            </div>
+                            <button onclick="markDone('augeoagency_dns', 'augeoagency.com DNS Fix', 'Point DNS to Vercel via GoDaddy — 5+ days waiting')" class="flex-shrink-0 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">DONE</button>
+                        </div>
                     </div>
                     <!-- TASKS_END -->
                     
                     <div class="mt-4 pt-4 border-t border-gray-100">
                         <div class="flex items-center justify-between text-xs text-gray-400">
-                            <span>3 active tasks</span>
+                            <span id="activeTaskCount">5 active tasks</span>
                             <a href="./archive/" class="text-blue-600 hover:text-blue-700">View archived tasks →</a>
                         </div>
                     </div>
@@ -387,13 +460,106 @@
     </div>
 
     <script>
-        // Simple auto-refresh timestamp update every 30 seconds
+        // Pulse animation
         setInterval(() => {
             const dots = document.querySelectorAll('.animate-pulse');
             dots.forEach(dot => {
                 dot.style.opacity = dot.style.opacity === '0.5' ? '1' : '0.5';
             });
         }, 1000);
+
+        // ── Task Management ──────────────────────────────────────────
+        const ARCHIVE_KEY = 'hq_archived_tasks';
+
+        function getArchived() {
+            try { return JSON.parse(localStorage.getItem(ARCHIVE_KEY) || '[]'); }
+            catch(e) { return []; }
+        }
+
+        function markDone(id, title, description) {
+            const card = document.querySelector(`[data-task-id="${id}"]`);
+            if (!card) return;
+
+            const archived = getArchived();
+            archived.push({ id, title, description, completedAt: new Date().toISOString() });
+            localStorage.setItem(ARCHIVE_KEY, JSON.stringify(archived));
+
+            card.style.transition = 'opacity 0.3s, transform 0.3s';
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(20px)';
+            setTimeout(() => {
+                card.remove();
+                updateTaskCount();
+            }, 300);
+        }
+
+        function updateTaskCount() {
+            const count = document.querySelectorAll('#activeTaskList .task-card').length;
+            const el = document.getElementById('activeTaskCount');
+            if (el) el.textContent = `${count} active task${count !== 1 ? 's' : ''}`;
+        }
+
+        // Hide already-archived tasks on load
+        function applyArchivedState() {
+            const archived = getArchived();
+            const archivedIds = new Set(archived.map(t => t.id));
+            archivedIds.forEach(id => {
+                const card = document.querySelector(`[data-task-id="${id}"]`);
+                if (card) card.remove();
+            });
+            updateTaskCount();
+        }
+
+        // ── Live Revenue ─────────────────────────────────────────────
+        async function loadRevenue() {
+            try {
+                const r = await fetch('/api/revenue');
+                if (!r.ok) throw new Error(r.status);
+                const d = await r.json();
+                document.getElementById('weekRevenue').textContent = '$' + d.weekRevenue.toFixed(2);
+                document.getElementById('monthRevenue').textContent = '$' + d.monthRevenue.toFixed(2);
+                document.getElementById('weekTxns').textContent = d.weekTxns;
+                document.getElementById('monthTxns').textContent = d.monthTxns;
+                const pct = d.weekRevenue > 0 ? ((d.weekRevenue / 10000) * 100).toFixed(1) : '0.0';
+                document.getElementById('weekPct').textContent = pct + '% of $10K target';
+            } catch(e) {
+                ['weekRevenue','monthRevenue'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = '$0.00';
+                });
+                ['weekTxns','monthTxns'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = '0';
+                });
+                const pctEl = document.getElementById('weekPct');
+                if (pctEl) pctEl.textContent = '0.0% of $10K target';
+            }
+        }
+
+        // ── Live Twitter ─────────────────────────────────────────────
+        async function loadTwitter() {
+            try {
+                const r = await fetch('/api/twitter');
+                if (!r.ok) throw new Error(r.status);
+                const d = await r.json();
+                const fEl = document.getElementById('xFollowers');
+                const tEl = document.getElementById('xTweets');
+                const lEl = document.getElementById('xLikes');
+                if (fEl) fEl.textContent = d.followers.toLocaleString();
+                if (tEl) tEl.textContent = d.tweets.toLocaleString();
+                if (lEl) lEl.textContent = d.likes.toLocaleString();
+            } catch(e) {
+                ['xFollowers','xTweets','xLikes'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = '--';
+                });
+            }
+        }
+
+        // Init
+        applyArchivedState();
+        loadRevenue();
+        loadTwitter();
     </script>
 </body>
 </html>
